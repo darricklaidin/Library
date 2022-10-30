@@ -1,0 +1,106 @@
+@import url('https://fonts.googleapis.com/css2?family=Jockey+One&display=swap');
+
+:root {
+  --title-font-family: 'Jockey One', sans-serif;
+  --body-bg: #fff3ff;
+  --primary-light-clr: #d499b9;
+  --primary-light-unread-clr: #FFD3EB;
+  --secondary-light-clr: #e8c1c5;
+  --primary-neutral-clr: #9055a2;
+  --primary-dark-clr: #2e294e;
+  --secondary-dark-clr: #011638;
+  --trash-icon-clr: #fff;
+  --add-btn-clr: #d499b9;
+  --add-btn-bg: rgba(212, 153, 185, 50%);
+}
+
+*, *::before, *::after {
+    box-sizing: inherit;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    width: 100vw;
+    min-height: 100vh;
+    background-color: var(--body-bg);
+}
+
+nav {
+    background-color: var(--primary-neutral-clr);
+    font-family: var(--title-font-family);
+    color: var(--secondary-light-clr);
+    font-size: 2rem;
+}
+
+nav h1 {
+    padding: 1rem 2rem;
+    font-weight: normal;
+}
+
+.shelf {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 4rem;
+    padding: 2rem;
+}
+
+.book {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--secondary-light-clr);
+    color: var(--primary-dark-clr);
+    border-radius: 5px;
+    height: 11rem;
+    font-weight: bold;
+    padding: 1rem
+}
+
+.book h6 {
+    font-size: 1rem;
+    
+}
+
+.book div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    gap: 1rem;
+}
+
+.book button {
+    font-weight: inherit;
+    border: none;
+}
+
+#book-status-btn {
+    background-color: var(--primary-light-clr);
+    border-radius: 5px;
+    padding: 0.5rem;
+}
+
+#delete-book-btn {
+    background-color: var(--primary-neutral-clr);
+    border-radius: 50%;
+    padding: 0.5rem;
+}
+
+#add-book-btn {
+    background-color: var(--add-btn-bg);
+    border-radius: 50%;
+    border: none;
+    padding: 1rem;
+}
+
+#add-book-btn svg {
+    color: var(--add-btn-clr);
+}
