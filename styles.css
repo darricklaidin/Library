@@ -31,6 +31,14 @@ body {
     background-color: var(--body-bg);
 }
 
+button {
+    cursor: pointer;
+}
+
+button * {
+    pointer-events: none;
+}
+
 nav {
     background-color: var(--primary-neutral-clr);
     font-family: var(--title-font-family);
@@ -59,14 +67,32 @@ nav h1 {
     background-color: var(--secondary-light-clr);
     color: var(--primary-dark-clr);
     border-radius: 5px;
-    height: 11rem;
+    width: 11rem;
+    height: 15rem;
     font-weight: bold;
-    padding: 1rem
+    padding: 1rem;
+    transition: 100ms ease;
+}
+
+.book:hover {
+    box-shadow: #aa99ad 5px 5px 10px;
+    background-color: #ecb8bd;
+}
+
+.book .info {
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+    align-items: baseline;
 }
 
 .book h6 {
     font-size: 1rem;
-    
+    word-break: break-word;
+}
+
+.book p {
+    font-size: 0.8rem;
 }
 
 .book div {
@@ -88,10 +114,44 @@ nav h1 {
     padding: 0.5rem;
 }
 
+#book-status-btn:hover {
+    background-color: #e2acca;
+    box-shadow: #b17596 1px 1px 5px;
+}
+
+#book-status-btn.unread {
+    background-color: var(--primary-light-unread-clr);
+}
+
+#book-status-btn.unread:hover {
+    background-color: #fcdfef;
+}
+
 #delete-book-btn {
     background-color: var(--primary-neutral-clr);
     border-radius: 50%;
     padding: 0.5rem;
+}
+
+#delete-book-btn:hover {
+    background-color: #a568b8;
+    box-shadow: #5e2e6f 1px 1px 5px;
+}
+
+.add-book-div {
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    width: 11rem;
+    height: 15rem;
+    background-color: rgba(255, 192, 203, 0.534);
+    border: dashed 2px var(--primary-light-clr);
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.add-book-div:hover {
+    background-color: rgba(255, 192, 203, 0.8);
 }
 
 #add-book-btn {
@@ -103,4 +163,78 @@ nav h1 {
 
 #add-book-btn svg {
     color: var(--add-btn-clr);
+}
+
+.new-book-modal {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: #443e6df3;
+    width: max(20rem, 30%);
+    height: min(30rem, 50%);
+    color: white;
+    padding: 5rem;
+    border-radius: 30px;
+    gap: 2rem;
+}
+
+form input {
+    outline: none;
+    border-radius: 20px;
+    border: none;
+    padding: .5rem 1rem;
+}
+
+.input-div {
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+}
+
+label {
+    font-weight: bold;
+    padding-left: 1rem;
+}
+
+#read-status-input {
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+}
+
+.btn-div {
+    padding-left: 1rem;
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.btn-div button {
+    padding: 0.5rem 1rem;
+    width: 5rem;
+    border-radius: 5px;
+    border: none;
+    font-weight: bold;
+    transition: 50ms;
+}
+
+.btn-div button:hover {
+    background-color: #a5a5a5;
+}
+
+#pages {
+    width: 8rem;
 }
